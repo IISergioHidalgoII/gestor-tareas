@@ -1,6 +1,10 @@
 # Gestor de Tareas
 
+<<<<<<< HEAD
 Aplicacion de consola para gestionar tareas con estados personalizados, edicion de nombre y persistencia en `tareas.json`.
+=======
+Aplicacion demtro de consola para gestionar tareas con opciones de crear, listar, completar y eliminar. Los datos persisten en `tareas.json`.
+>>>>>>> 95c70ad2f0108c8ded4956d6a754f73b2df34d48
 
 ## Como ejecutar
 
@@ -27,25 +31,31 @@ python gestor.py
 ```
 Inicio
   │
-  ▼
-cargar_tareas() ──► lee tareas.json (o lista vacia)
+  V
+cargar_tareas() ──> lee tareas.json (o lista vacia)
   │
-  ▼
+  V
 mostrar_menu()
   │
-  ▼
+  V
 Opcion?
-  ├─ "1" ──► input nombre ──► crear_tarea() ──► guardar_tareas() ──► menu
+  ├─ "1" ──> input nombre ──> crear_tarea() ──> guardar_tareas() ──> menu
   │
-  ├─ "2" ──► listar_tareas() ─────────────────────────────────────► menu
+  ├─ "2" ──> listar_tareas() ─────────────────────────────────────> menu
   │
-  ├─ "3" ──► listar_tareas()
+  ├─ "3" ──> listar_tareas()
   │               │
+<<<<<<< HEAD
   │               ▼
   │          input ID ──► seleccionar estado ──► cambiar_estado() ──► guardar_tareas() ──► menu
+=======
+  │               V
+  │          input ID ──> completar_tarea() ──> guardar_tareas() ──> menu
+>>>>>>> 95c70ad2f0108c8ded4956d6a754f73b2df34d48
   │
-  ├─ "4" ──► listar_tareas()
+  ├─ "4" ──> listar_tareas()
   │               │
+<<<<<<< HEAD
   │               ▼
   │          input ID ──► input nuevo nombre ──► editar_tarea() ──► guardar_tareas() ──► menu
   │
@@ -55,8 +65,14 @@ Opcion?
   │          input ID ──► eliminar_tarea() ──► guardar_tareas() ──► menu
   │
   ├─ "6" ──► Salir
+=======
+  │               V
+  │          input ID ──> eliminar_tarea() ──> guardar_tareas() ──> menu
   │
-  └─ otra ──► "Opcion no valida" ──────────────────────────────────► menu
+  ├─ "5" ──> Salir
+>>>>>>> 95c70ad2f0108c8ded4956d6a754f73b2df34d48
+  │
+  └─ otra ──> "Opcion no valida" ──────────────────────────────────> menu
 ```
 
 ## Estados disponibles
