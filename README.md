@@ -10,17 +10,17 @@ python gestor.py
 
 ## Funciones
 
-| Funcion | Que hace |
-|---|---|
-| `cargar_tareas()` | Lee `tareas.json` y retorna la lista. Si no existe, retorna lista vacia |
-| `guardar_tareas()` | Escribe la lista de tareas en `tareas.json` |
-| `crear_tarea(nombre)` | Crea una tarea con ID unico y estado `[--]` Pendiente |
-| `listar_tareas()` | Muestra todas las tareas con su ID, simbolo de estado y nombre |
-| `cambiar_estado()` | Cambia el estado de una tarea por ID con opciones del menu |
-| `editar_tarea()` | Edita el nombre de una tarea por ID |
-| `eliminar_tarea()` | Elimina una tarea por ID |
-| `mostrar_menu()` | Imprime el menu de opciones |
-| `main()` | Carga las tareas y controla el flujo en un bucle |
+| Funcion               | Que hace                                                                |
+| --------------------- | ----------------------------------------------------------------------- |
+| `cargar_tareas()`     | Lee `tareas.json` y retorna la lista. Si no existe, retorna lista vacia |
+| `guardar_tareas()`    | Escribe la lista de tareas en `tareas.json`                             |
+| `crear_tarea(nombre)` | Crea una tarea con ID unico y estado `[--]` Pendiente                   |
+| `listar_tareas()`     | Muestra todas las tareas con su ID, simbolo de estado y nombre          |
+| `cambiar_estado()`    | Cambia el estado de una tarea por ID con opciones del menu              |
+| `editar_tarea()`      | Edita el nombre de una tarea por ID                                     |
+| `eliminar_tarea()`    | Elimina una tarea por ID                                                |
+| `mostrar_menu()`      | Imprime el menu de opciones                                             |
+| `main()`              | Carga las tareas y controla el flujo en un bucle                        |
 
 ## Diagrama de flujo
 
@@ -62,10 +62,10 @@ Opcion?
 ## Estados disponibles
 
 | Simbolo | Significado |
-|---|---|
-| `[--]` | Pendiente |
-| `[o]`  | Completada |
-| `[x]`  | Rechazada |
+| ------- | ----------- |
+| `[--]`  | Pendiente   |
+| `[o]`   | Completada  |
+| `[x]`   | Rechazada   |
 
 ## Estructura de datos
 
