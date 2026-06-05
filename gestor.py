@@ -1,7 +1,11 @@
 import json
 import os
 
+#==================== Constantes ====================
+
 ARCHIVO = "tareas.json"
+
+#==================== Funciones ====================
 
 def cargar_tareas():
     if not os.path.exists(ARCHIVO):
@@ -63,6 +67,8 @@ def eliminar_tarea():
             print("No se encontro la tarea.")
     except ValueError:
         print("Entrada invalida.")
+
+#==================== Menu principal ====================
 
 def mostrar_menu():
     print("\n===== Gestor de Tareas =====")
