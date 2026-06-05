@@ -1,6 +1,6 @@
 # Gestor de Tareas
 
-Aplicacion de consola para gestionar tareas con opciones de crear, listar, completar y eliminar. Los datos persisten en `tareas.json`.
+Aplicacion demtro de consola para gestionar tareas con opciones de crear, listar, completar y eliminar. Los datos persisten en `tareas.json`.
 
 ## Como ejecutar
 
@@ -26,31 +26,31 @@ python gestor.py
 ```
 Inicio
   │
-  ▼
-cargar_tareas() ──► lee tareas.json (o lista vacia)
+  V
+cargar_tareas() ──> lee tareas.json (o lista vacia)
   │
-  ▼
+  V
 mostrar_menu()
   │
-  ▼
+  V
 Opcion?
-  ├─ "1" ──► input nombre ──► crear_tarea() ──► guardar_tareas() ──► menu
+  ├─ "1" ──> input nombre ──> crear_tarea() ──> guardar_tareas() ──> menu
   │
-  ├─ "2" ──► listar_tareas() ─────────────────────────────────────► menu
+  ├─ "2" ──> listar_tareas() ─────────────────────────────────────> menu
   │
-  ├─ "3" ──► listar_tareas()
+  ├─ "3" ──> listar_tareas()
   │               │
-  │               ▼
-  │          input ID ──► completar_tarea() ──► guardar_tareas() ──► menu
+  │               V
+  │          input ID ──> completar_tarea() ──> guardar_tareas() ──> menu
   │
-  ├─ "4" ──► listar_tareas()
+  ├─ "4" ──> listar_tareas()
   │               │
-  │               ▼
-  │          input ID ──► eliminar_tarea() ──► guardar_tareas() ──► menu
+  │               V
+  │          input ID ──> eliminar_tarea() ──> guardar_tareas() ──> menu
   │
-  ├─ "5" ──► Salir
+  ├─ "5" ──> Salir
   │
-  └─ otra ──► "Opcion no valida" ──────────────────────────────────► menu
+  └─ otra ──> "Opcion no valida" ──────────────────────────────────> menu
 ```
 
 ## Estructura de datos
