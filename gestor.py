@@ -106,7 +106,7 @@ def mostrar_menu():
     print("\n===== Gestor de Tareas =====")
     print("1. Crear tarea")
     print("2. Ver tareas")
-    print("3. Cambiar estado  [--] Pendiente / [o] Completada / [x] Rechazada")
+    print("3. Cambiar estado")
     print("4. Editar nombre")
     print("5. Eliminar tarea")
     print("6. Salir")
