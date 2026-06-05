@@ -1,8 +1,25 @@
-tareas = []
+import json
+import os
+
+ARCHIVO = "tareas.json"
+
+def cargar_tareas():
+    if not os.path.exists(ARCHIVO):
+        return []
+    with open(ARCHIVO, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def guardar_tareas():
+    with open(ARCHIVO, "w", encoding="utf-8") as f:
+        json.dump(tareas, f, ensure_ascii=False, indent=2)
+
+tareas = cargar_tareas()
 
 def crear_tarea(nombre):
-    tarea = {"id": len(tareas) + 1, "nombre": nombre, "completada": False}
+    id_nuevo = max((t["id"] for t in tareas), default=0) + 1
+    tarea = {"id": id_nuevo, "nombre": nombre, "completada": False}
     tareas.append(tarea)
+    guardar_tareas()
     print(f"Tarea '{nombre}' creada.")
 
 def listar_tareas():
@@ -24,6 +41,7 @@ def completar_tarea():
         tarea = next((t for t in tareas if t["id"] == id_tarea), None)
         if tarea:
             tarea["completada"] = True
+            guardar_tareas()
             print(f"Tarea '{tarea['nombre']}' marcada como completada.")
         else:
             print("No se encontro la tarea.")
@@ -39,6 +57,7 @@ def eliminar_tarea():
         tarea = next((t for t in tareas if t["id"] == id_tarea), None)
         if tarea:
             tareas.remove(tarea)
+            guardar_tareas()
             print(f"Tarea '{tarea['nombre']}' eliminada.")
         else:
             print("No se encontro la tarea.")
