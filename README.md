@@ -1,6 +1,6 @@
 # Gestor de Tareas
 
-Aplicacion de consola para gestionar tareas con opciones de crear, listar, completar y eliminar. Los datos persisten en `tareas.json`.
+Aplicacion de consola para gestionar tareas con estados personalizados, edicion de nombre y persistencia en `tareas.json`.
 
 ## Como ejecutar
 
@@ -14,9 +14,10 @@ python gestor.py
 |---|---|
 | `cargar_tareas()` | Lee `tareas.json` y retorna la lista. Si no existe, retorna lista vacia |
 | `guardar_tareas()` | Escribe la lista de tareas en `tareas.json` |
-| `crear_tarea(nombre)` | Crea una tarea con ID unico y estado pendiente |
-| `listar_tareas()` | Muestra todas las tareas con su ID, estado y nombre |
-| `completar_tarea()` | Marca una tarea como completada por ID |
+| `crear_tarea(nombre)` | Crea una tarea con ID unico y estado `[--]` Pendiente |
+| `listar_tareas()` | Muestra todas las tareas con su ID, simbolo de estado y nombre |
+| `cambiar_estado()` | Cambia el estado de una tarea por ID con opciones del menu |
+| `editar_tarea()` | Edita el nombre de una tarea por ID |
 | `eliminar_tarea()` | Elimina una tarea por ID |
 | `mostrar_menu()` | Imprime el menu de opciones |
 | `main()` | Carga las tareas y controla el flujo en un bucle |
@@ -41,17 +42,30 @@ Opcion?
   ├─ "3" ──► listar_tareas()
   │               │
   │               ▼
-  │          input ID ──► completar_tarea() ──► guardar_tareas() ──► menu
+  │          input ID ──► seleccionar estado ──► cambiar_estado() ──► guardar_tareas() ──► menu
   │
   ├─ "4" ──► listar_tareas()
   │               │
   │               ▼
+  │          input ID ──► input nuevo nombre ──► editar_tarea() ──► guardar_tareas() ──► menu
+  │
+  ├─ "5" ──► listar_tareas()
+  │               │
+  │               ▼
   │          input ID ──► eliminar_tarea() ──► guardar_tareas() ──► menu
   │
-  ├─ "5" ──► Salir
+  ├─ "6" ──► Salir
   │
   └─ otra ──► "Opcion no valida" ──────────────────────────────────► menu
 ```
+
+## Estados disponibles
+
+| Simbolo | Significado |
+|---|---|
+| `[--]` | Pendiente |
+| `[o]` | Completada |
+| `[x]` | Rechazada |
 
 ## Estructura de datos
 
@@ -62,7 +76,7 @@ Cada tarea se almacena como objeto en `tareas.json`:
   {
     "id": 1,
     "nombre": "Estudiar Python",
-    "completada": false
+    "estado": "--"
   }
 ]
 ```
