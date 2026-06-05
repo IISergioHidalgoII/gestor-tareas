@@ -55,7 +55,7 @@ Opcion?
   |         input ID -> eliminar_tarea() -> guardar_tareas() -> menu
   |
   |- "6" -> Salir
-  |           V
+  |           
   `- otra -> "Opcion no valida" -----> menu
 ```
 
